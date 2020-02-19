@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Game from './components/TicTacToe/index.js';
 import Login from './components/login/index.js';
+import Register from './components/register/index.js';
+
 
 class App extends React.Component {
   constructor(props){
@@ -16,6 +18,10 @@ class App extends React.Component {
   
   render(){
     return(
+      (this.state.register) ?
+      <Register />
+      :
+
      (!this.state.loggedIn) ?
     <Login users={this.state.users }
       logInUser={() => this.logInUser(true)}/>
